@@ -8,7 +8,9 @@
     ".NETCoreApp,Version=v6.0": {
       "FacturacionApi/1.0.0": {
         "dependencies": {
+          "DinkToPdf": "1.0.8",
           "FluentAssertions": "6.7.0",
+          "HtmlRenderer.PdfSharp": "1.5.0.6",
           "Microsoft.AspNet.WebPages": "3.2.9",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "6.0.7",
           "Microsoft.AspNetCore.Identity": "2.2.0",
@@ -26,7 +28,9 @@
           "Swashbuckle.AspNetCore": "6.2.3",
           "System.Drawing.Common": "7.0.0",
           "System.IdentityModel.Tokens.Jwt": "6.22.0",
-          "WireMock.Net": "1.5.1"
+          "WireMock.Net": "1.5.1",
+          "ZXing.Net": "0.16.9",
+          "ZXing.Net.Bindings.Windows.Compatibility": "0.16.12"
         },
         "runtime": {
           "FacturacionApi.dll": {}
@@ -37,6 +41,23 @@
           "lib/netstandard2.1/AnyOf.dll": {
             "assemblyVersion": "0.3.0.0",
             "fileVersion": "0.3.0.0"
+          }
+        }
+      },
+      "DinkToPdf/1.0.8": {
+        "dependencies": {
+          "NETStandard.Library": "1.6.1",
+          "System.Collections.Concurrent": "4.3.0",
+          "System.Globalization": "4.3.0",
+          "System.Reflection.TypeExtensions": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.InteropServices": "4.3.0",
+          "System.Threading.Thread": "4.0.0"
+        },
+        "runtime": {
+          "lib/netstandard1.6/DinkToPdf.dll": {
+            "assemblyVersion": "1.0.8.0",
+            "fileVersion": "1.0.8.0"
           }
         }
       },
@@ -168,6 +189,26 @@
           "lib/netstandard2.1/HandlebarsDotNet.Helpers.XPath.dll": {
             "assemblyVersion": "2.3.5.0",
             "fileVersion": "2.3.5.0"
+          }
+        }
+      },
+      "HtmlRenderer.Core/1.5.0.5": {
+        "runtime": {
+          "lib/net45/HtmlRenderer.dll": {
+            "assemblyVersion": "1.5.0.5",
+            "fileVersion": "1.5.0.5"
+          }
+        }
+      },
+      "HtmlRenderer.PdfSharp/1.5.0.6": {
+        "dependencies": {
+          "HtmlRenderer.Core": "1.5.0.5",
+          "PDFsharp": "1.32.3057"
+        },
+        "runtime": {
+          "lib/net45/HtmlRenderer.PdfSharp.dll": {
+            "assemblyVersion": "1.5.0.6",
+            "fileVersion": "1.5.0.6"
           }
         }
       },
@@ -1441,6 +1482,26 @@
           }
         }
       },
+      "PDFsharp/1.32.3057": {
+        "runtime": {
+          "lib/net20/PdfSharp.Charting.dll": {
+            "assemblyVersion": "1.32.3057.0",
+            "fileVersion": "1.32.3057.0"
+          },
+          "lib/net20/PdfSharp.dll": {
+            "assemblyVersion": "1.32.3057.0",
+            "fileVersion": "1.32.3057.0"
+          }
+        },
+        "resources": {
+          "lib/net20/de/PdfSharp.Charting.resources.dll": {
+            "locale": "de"
+          },
+          "lib/net20/de/PdfSharp.resources.dll": {
+            "locale": "de"
+          }
+        }
+      },
       "PuppeteerSharp/10.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.WebUtilities": "2.2.0",
@@ -2345,6 +2406,11 @@
           "System.Threading.Tasks": "4.3.0"
         }
       },
+      "System.Threading.Thread/4.0.0": {
+        "dependencies": {
+          "System.Runtime": "4.3.0"
+        }
+      },
       "System.Threading.Timer/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.0",
@@ -2523,6 +2589,26 @@
             "fileVersion": "1.1.3.0"
           }
         }
+      },
+      "ZXing.Net/0.16.9": {
+        "runtime": {
+          "lib/net6.0/zxing.dll": {
+            "assemblyVersion": "0.16.9.0",
+            "fileVersion": "0.16.9.0"
+          }
+        }
+      },
+      "ZXing.Net.Bindings.Windows.Compatibility/0.16.12": {
+        "dependencies": {
+          "System.Drawing.Common": "7.0.0",
+          "ZXing.Net": "0.16.9"
+        },
+        "runtime": {
+          "lib/net6.0/ZXing.Windows.Compatibility.dll": {
+            "assemblyVersion": "0.16.12.0",
+            "fileVersion": "0.16.12.0"
+          }
+        }
       }
     }
   },
@@ -2538,6 +2624,13 @@
       "sha512": "sha512-2jerEsjkCQ8o8w6CZRch3GnrdEw0fIDzMcalMx+JYfr0A+JtZwIhknlZ3xs+xdXHbTzRhi/7zpc3A1lawCUvTg==",
       "path": "anyof/0.3.0",
       "hashPath": "anyof.0.3.0.nupkg.sha512"
+    },
+    "DinkToPdf/1.0.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-wJDlcNXjQ+OnBFwh3LBeAXgrXqlKl0RsgN60XpxEFbyqzdaG9ASb5HTXQjXQPaBguSCOrGZZESPnpcng34TEkw==",
+      "path": "dinktopdf/1.0.8",
+      "hashPath": "dinktopdf.1.0.8.nupkg.sha512"
     },
     "Fare/2.2.0": {
       "type": "package",
@@ -2615,6 +2708,20 @@
       "sha512": "sha512-8e7jlURu67Su64TtidGeygYKRB2ciCgB0RDBZ41PmgO6DjDdSJuiSfzBjU9+bnAAPEEMMcKLbZPqs1liJANV2g==",
       "path": "handlebars.net.helpers.xpath/2.3.5",
       "hashPath": "handlebars.net.helpers.xpath.2.3.5.nupkg.sha512"
+    },
+    "HtmlRenderer.Core/1.5.0.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-QfZkSOb8HomRkKW3EAjT/VT48x6q+bgK4IBA9gFF+5FVTbvmMEIm42NsXEx/LTBHMssnQTPe94X0Bi8KdUIVQA==",
+      "path": "htmlrenderer.core/1.5.0.5",
+      "hashPath": "htmlrenderer.core.1.5.0.5.nupkg.sha512"
+    },
+    "HtmlRenderer.PdfSharp/1.5.0.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-uk2lzFa/0zQSk8im2CX8ROXlqy8YAJUG28b5/G8wa0YNdO6+04bEl3iZCaThkcyNWnnIsHCn5hWR3vZjc6JhmA==",
+      "path": "htmlrenderer.pdfsharp/1.5.0.6",
+      "hashPath": "htmlrenderer.pdfsharp.1.5.0.6.nupkg.sha512"
     },
     "Humanizer/2.14.1": {
       "type": "package",
@@ -3491,6 +3598,13 @@
       "path": "nswag.core/13.15.10",
       "hashPath": "nswag.core.13.15.10.nupkg.sha512"
     },
+    "PDFsharp/1.32.3057": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-M8w6e4R+jA1j3ddPCY6jNnb8RG21ZgCr+ENapwaH5NPzNl600f1wOcCPY2hEO+jb0aCGjcMHrWk/K+PC1cw0PQ==",
+      "path": "pdfsharp/1.32.3057",
+      "hashPath": "pdfsharp.1.32.3057.nupkg.sha512"
+    },
     "PuppeteerSharp/10.0.0": {
       "type": "package",
       "serviceable": true,
@@ -4198,6 +4312,13 @@
       "path": "system.threading.tasks.extensions/4.3.0",
       "hashPath": "system.threading.tasks.extensions.4.3.0.nupkg.sha512"
     },
+    "System.Threading.Thread/4.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-gIdJqDXlOr5W9zeqFErLw3dsOsiShSCYtF9SEHitACycmvNvY8odf9kiKvp6V7aibc8C4HzzNBkWXjyfn7plbQ==",
+      "path": "system.threading.thread/4.0.0",
+      "hashPath": "system.threading.thread.4.0.0.nupkg.sha512"
+    },
     "System.Threading.Timer/4.3.0": {
       "type": "package",
       "serviceable": true,
@@ -4281,6 +4402,20 @@
       "sha512": "sha512-WLlph1USfuZAZPp7ZcaAAi++jP1mapfgFIha0IjAdlX6uk4Rq7AN9/GfF37KiOzWV4b9Wz4cbhbKS7xIp/Z6jw==",
       "path": "xpath2.extensions/1.1.3",
       "hashPath": "xpath2.extensions.1.1.3.nupkg.sha512"
+    },
+    "ZXing.Net/0.16.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-7WaVMHklpT3Ye2ragqRIwlFRsb6kOk63BOGADV0fan3ulVfGLUYkDi5yNUsZS/7FVNkWbtHAlDLmu4WnHGfqvQ==",
+      "path": "zxing.net/0.16.9",
+      "hashPath": "zxing.net.0.16.9.nupkg.sha512"
+    },
+    "ZXing.Net.Bindings.Windows.Compatibility/0.16.12": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-bmwWQ4mOQEJOD0IkxSNZScU+kjMT1YliZPLIQtuh1LbxolKqJLcvyIY/9xv/2g3tNO3mZlcCIUOx756Xu3kE6w==",
+      "path": "zxing.net.bindings.windows.compatibility/0.16.12",
+      "hashPath": "zxing.net.bindings.windows.compatibility.0.16.12.nupkg.sha512"
     }
   }
 }
