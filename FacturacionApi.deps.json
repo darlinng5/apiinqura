@@ -8,9 +8,8 @@
     ".NETCoreApp,Version=v6.0": {
       "FacturacionApi/1.0.0": {
         "dependencies": {
-          "DinkToPdf": "1.0.8",
+          "BarCode": "2023.9.45",
           "FluentAssertions": "6.7.0",
-          "HtmlRenderer.PdfSharp": "1.5.0.6",
           "Microsoft.AspNet.WebPages": "3.2.9",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "6.0.7",
           "Microsoft.AspNetCore.Identity": "2.2.0",
@@ -23,13 +22,16 @@
           "Microsoft.IdentityModel.Tokens": "6.22.0",
           "Nancy": "2.0.0",
           "Newtonsoft.Json": "13.0.2",
+          "PDFsharp": "1.50.5147",
           "PuppeteerSharp": "10.0.0",
           "RestSharp": "110.2.0",
+          "SixLabors.ImageSharp": "3.0.2",
           "Swashbuckle.AspNetCore": "6.2.3",
           "System.Drawing.Common": "7.0.0",
           "System.IdentityModel.Tokens.Jwt": "6.22.0",
           "WireMock.Net": "1.5.1",
           "ZXing.Net": "0.16.9",
+          "ZXing.Net.Bindings.SkiaSharp": "0.16.13",
           "ZXing.Net.Bindings.Windows.Compatibility": "0.16.12"
         },
         "runtime": {
@@ -44,20 +46,32 @@
           }
         }
       },
-      "DinkToPdf/1.0.8": {
+      "BarCode/2023.9.45": {
         "dependencies": {
-          "NETStandard.Library": "1.6.1",
-          "System.Collections.Concurrent": "4.3.0",
-          "System.Globalization": "4.3.0",
-          "System.Reflection.TypeExtensions": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Runtime.InteropServices": "4.3.0",
-          "System.Threading.Thread": "4.0.0"
+          "IronSoftware.Common": "2023.9.6",
+          "IronSoftware.Native.PdfModel": "2023.9.18743",
+          "IronSoftware.System.Drawing": "2023.9.2"
         },
         "runtime": {
-          "lib/netstandard1.6/DinkToPdf.dll": {
-            "assemblyVersion": "1.0.8.0",
-            "fileVersion": "1.0.8.0"
+          "lib/netstandard2.0/IronBarCode.dll": {
+            "assemblyVersion": "2023.9.0.45",
+            "fileVersion": "2023.9.0.45"
+          },
+          "lib/netstandard2.0/SixLabors.Fonts.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          },
+          "lib/netstandard2.0/SixLabors.ImageSharp.Drawing.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "BitMiracle.LibTiff.NET/2.4.649": {
+        "runtime": {
+          "lib/netstandard2.0/BitMiracle.LibTiff.NET.dll": {
+            "assemblyVersion": "2.4.649.0",
+            "fileVersion": "2.4.649.0"
           }
         }
       },
@@ -189,26 +203,6 @@
           "lib/netstandard2.1/HandlebarsDotNet.Helpers.XPath.dll": {
             "assemblyVersion": "2.3.5.0",
             "fileVersion": "2.3.5.0"
-          }
-        }
-      },
-      "HtmlRenderer.Core/1.5.0.5": {
-        "runtime": {
-          "lib/net45/HtmlRenderer.dll": {
-            "assemblyVersion": "1.5.0.5",
-            "fileVersion": "1.5.0.5"
-          }
-        }
-      },
-      "HtmlRenderer.PdfSharp/1.5.0.6": {
-        "dependencies": {
-          "HtmlRenderer.Core": "1.5.0.5",
-          "PDFsharp": "1.32.3057"
-        },
-        "runtime": {
-          "lib/net45/HtmlRenderer.PdfSharp.dll": {
-            "assemblyVersion": "1.5.0.6",
-            "fileVersion": "1.5.0.6"
           }
         }
       },
@@ -749,6 +743,90 @@
         "resources": {
           "lib/net6.0/zh-Hant/Humanizer.resources.dll": {
             "locale": "zh-Hant"
+          }
+        }
+      },
+      "IronSoftware.Common/2023.9.6": {
+        "dependencies": {
+          "Microsoft.Extensions.Logging.Abstractions": "6.0.0",
+          "System.Memory": "4.5.5"
+        },
+        "runtime": {
+          "lib/netstandard2.0/IronSoftware.Abstractions.dll": {
+            "assemblyVersion": "2023.9.0.6",
+            "fileVersion": "2023.9.0.6"
+          },
+          "lib/netstandard2.0/IronSoftware.Logger.dll": {
+            "assemblyVersion": "2023.9.0.6",
+            "fileVersion": "2023.9.0.6"
+          }
+        }
+      },
+      "IronSoftware.Native.PdfModel/2023.9.18743": {
+        "runtimeTargets": {
+          "runtimes/linux-x64/native/IronPdfInterop.so": {
+            "rid": "linux-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x64/native/Pdfium.Native.deployment.json": {
+            "rid": "linux-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/osx-arm64/native/IronPdfInterop.dylib": {
+            "rid": "osx-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/osx-arm64/native/Pdfium.Native.deployment.json": {
+            "rid": "osx-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/osx-x64/native/IronPdfInterop.dylib": {
+            "rid": "osx-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/osx-x64/native/Pdfium.Native.deployment.json": {
+            "rid": "osx-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x64/native/IronPdfInterop.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "2023.9.0.18743"
+          },
+          "runtimes/win-x64/native/Pdfium.Native.deployment.json": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x86/native/IronPdfInterop.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "2023.9.0.18743"
+          },
+          "runtimes/win-x86/native/Pdfium.Native.deployment.json": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "IronSoftware.System.Drawing/2023.9.2": {
+        "dependencies": {
+          "BitMiracle.LibTiff.NET": "2.4.649",
+          "SixLabors.ImageSharp": "3.0.2",
+          "SixLabors.ImageSharp.Drawing": "1.0.0",
+          "System.Memory": "4.5.5"
+        },
+        "runtime": {
+          "lib/net60/IronSoftware.Drawing.Common.dll": {
+            "assemblyVersion": "2023.9.2.0",
+            "fileVersion": "2023.9.2.0"
           }
         }
       },
@@ -1482,15 +1560,15 @@
           }
         }
       },
-      "PDFsharp/1.32.3057": {
+      "PDFsharp/1.50.5147": {
         "runtime": {
           "lib/net20/PdfSharp.Charting.dll": {
-            "assemblyVersion": "1.32.3057.0",
-            "fileVersion": "1.32.3057.0"
+            "assemblyVersion": "1.50.5147.0",
+            "fileVersion": "1.50.5147.0"
           },
           "lib/net20/PdfSharp.dll": {
-            "assemblyVersion": "1.32.3057.0",
-            "fileVersion": "1.32.3057.0"
+            "assemblyVersion": "1.50.5147.0",
+            "fileVersion": "1.50.5147.0"
           }
         },
         "resources": {
@@ -1601,6 +1679,61 @@
           "lib/netstandard2.0/SimMetrics.Net.dll": {
             "assemblyVersion": "1.0.5.0",
             "fileVersion": "1.0.5.0"
+          }
+        }
+      },
+      "SixLabors.Fonts/1.0.0": {},
+      "SixLabors.ImageSharp/3.0.2": {
+        "runtime": {
+          "lib/net6.0/SixLabors.ImageSharp.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.2.0"
+          }
+        }
+      },
+      "SixLabors.ImageSharp.Drawing/1.0.0": {
+        "dependencies": {
+          "SixLabors.Fonts": "1.0.0",
+          "SixLabors.ImageSharp": "3.0.2"
+        }
+      },
+      "SkiaSharp/2.88.3": {
+        "dependencies": {
+          "SkiaSharp.NativeAssets.Win32": "2.88.3",
+          "SkiaSharp.NativeAssets.macOS": "2.88.3"
+        },
+        "runtime": {
+          "lib/net6.0/SkiaSharp.dll": {
+            "assemblyVersion": "2.88.0.0",
+            "fileVersion": "2.88.3.0"
+          }
+        }
+      },
+      "SkiaSharp.NativeAssets.macOS/2.88.3": {
+        "runtimeTargets": {
+          "runtimes/osx/native/libSkiaSharp.dylib": {
+            "rid": "osx",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "SkiaSharp.NativeAssets.Win32/2.88.3": {
+        "runtimeTargets": {
+          "runtimes/win-arm64/native/libSkiaSharp.dll": {
+            "rid": "win-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x64/native/libSkiaSharp.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x86/native/libSkiaSharp.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
           }
         }
       },
@@ -1952,6 +2085,7 @@
           "System.Threading": "4.3.0"
         }
       },
+      "System.Memory/4.5.5": {},
       "System.Net.Http/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.0",
@@ -2406,11 +2540,6 @@
           "System.Threading.Tasks": "4.3.0"
         }
       },
-      "System.Threading.Thread/4.0.0": {
-        "dependencies": {
-          "System.Runtime": "4.3.0"
-        }
-      },
       "System.Threading.Timer/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.0",
@@ -2598,6 +2727,18 @@
           }
         }
       },
+      "ZXing.Net.Bindings.SkiaSharp/0.16.13": {
+        "dependencies": {
+          "SkiaSharp": "2.88.3",
+          "ZXing.Net": "0.16.9"
+        },
+        "runtime": {
+          "lib/net6.0/ZXing.SkiaSharp.dll": {
+            "assemblyVersion": "0.16.13.0",
+            "fileVersion": "0.16.13.0"
+          }
+        }
+      },
       "ZXing.Net.Bindings.Windows.Compatibility/0.16.12": {
         "dependencies": {
           "System.Drawing.Common": "7.0.0",
@@ -2625,12 +2766,19 @@
       "path": "anyof/0.3.0",
       "hashPath": "anyof.0.3.0.nupkg.sha512"
     },
-    "DinkToPdf/1.0.8": {
+    "BarCode/2023.9.45": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-wJDlcNXjQ+OnBFwh3LBeAXgrXqlKl0RsgN60XpxEFbyqzdaG9ASb5HTXQjXQPaBguSCOrGZZESPnpcng34TEkw==",
-      "path": "dinktopdf/1.0.8",
-      "hashPath": "dinktopdf.1.0.8.nupkg.sha512"
+      "sha512": "sha512-RYFgM2YJ6NRa3v21L2M3fGP2SLyAjdcp7iAZGuNBLee83OW9IenQ8i1y02zhaXpJy9oWVUXRkl+VLHqvBJ4Kpg==",
+      "path": "barcode/2023.9.45",
+      "hashPath": "barcode.2023.9.45.nupkg.sha512"
+    },
+    "BitMiracle.LibTiff.NET/2.4.649": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-XCEdfCphKo0UAvSg1h/OzOFWtjkIGnPMAziYkNqV7NVrqb/tZJTBxJhxIEX7gpvQwg8GIRYt133SUncfkKfjLA==",
+      "path": "bitmiracle.libtiff.net/2.4.649",
+      "hashPath": "bitmiracle.libtiff.net.2.4.649.nupkg.sha512"
     },
     "Fare/2.2.0": {
       "type": "package",
@@ -2708,20 +2856,6 @@
       "sha512": "sha512-8e7jlURu67Su64TtidGeygYKRB2ciCgB0RDBZ41PmgO6DjDdSJuiSfzBjU9+bnAAPEEMMcKLbZPqs1liJANV2g==",
       "path": "handlebars.net.helpers.xpath/2.3.5",
       "hashPath": "handlebars.net.helpers.xpath.2.3.5.nupkg.sha512"
-    },
-    "HtmlRenderer.Core/1.5.0.5": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-QfZkSOb8HomRkKW3EAjT/VT48x6q+bgK4IBA9gFF+5FVTbvmMEIm42NsXEx/LTBHMssnQTPe94X0Bi8KdUIVQA==",
-      "path": "htmlrenderer.core/1.5.0.5",
-      "hashPath": "htmlrenderer.core.1.5.0.5.nupkg.sha512"
-    },
-    "HtmlRenderer.PdfSharp/1.5.0.6": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-uk2lzFa/0zQSk8im2CX8ROXlqy8YAJUG28b5/G8wa0YNdO6+04bEl3iZCaThkcyNWnnIsHCn5hWR3vZjc6JhmA==",
-      "path": "htmlrenderer.pdfsharp/1.5.0.6",
-      "hashPath": "htmlrenderer.pdfsharp.1.5.0.6.nupkg.sha512"
     },
     "Humanizer/2.14.1": {
       "type": "package",
@@ -3072,6 +3206,27 @@
       "sha512": "sha512-VIXB7HCUC34OoaGnO3HJVtSv2/wljPhjV7eKH4+TFPgQdJj2lvHNKY41Dtg0Bphu7X5UaXFR4zrYYyo+GNOjbA==",
       "path": "humanizer.core.zh-hant/2.14.1",
       "hashPath": "humanizer.core.zh-hant.2.14.1.nupkg.sha512"
+    },
+    "IronSoftware.Common/2023.9.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-7k7W3ERO6KuK9eaBEpgN+j/oVd3zc+FTlvu+vbfgeRo16weF4aKEdWZACgrcywvQ5R0bdAfTPXydjsCz1pEWcw==",
+      "path": "ironsoftware.common/2023.9.6",
+      "hashPath": "ironsoftware.common.2023.9.6.nupkg.sha512"
+    },
+    "IronSoftware.Native.PdfModel/2023.9.18743": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-sK4e1I4CU355HkLPGs88gev/Ul56/5E4YBs82apPFmPbhIe4WoxVELmC6nbbjA+J6qKesvhYlC/4U8cf3+CJpg==",
+      "path": "ironsoftware.native.pdfmodel/2023.9.18743",
+      "hashPath": "ironsoftware.native.pdfmodel.2023.9.18743.nupkg.sha512"
+    },
+    "IronSoftware.System.Drawing/2023.9.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-D7zvvH7cpIMJx1QYWPVC9e6wypB+PnNjqfMIt4h/yN3BQH0pvEr8YcWwH+2awhQa5x7Mh64Pkgosprelh+zd4Q==",
+      "path": "ironsoftware.system.drawing/2023.9.2",
+      "hashPath": "ironsoftware.system.drawing.2023.9.2.nupkg.sha512"
     },
     "JmesPath.Net/1.0.125": {
       "type": "package",
@@ -3598,12 +3753,12 @@
       "path": "nswag.core/13.15.10",
       "hashPath": "nswag.core.13.15.10.nupkg.sha512"
     },
-    "PDFsharp/1.32.3057": {
+    "PDFsharp/1.50.5147": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-M8w6e4R+jA1j3ddPCY6jNnb8RG21ZgCr+ENapwaH5NPzNl600f1wOcCPY2hEO+jb0aCGjcMHrWk/K+PC1cw0PQ==",
-      "path": "pdfsharp/1.32.3057",
-      "hashPath": "pdfsharp.1.32.3057.nupkg.sha512"
+      "sha512": "sha512-vr5KBIqcXu2hqZ43UTwPR+jqHgMrT5tsPtJvEF+mORKoBNMh3bRWgAwic0U1sT2IVb4PR5m0GyQxnmCz8jBHWg==",
+      "path": "pdfsharp/1.50.5147",
+      "hashPath": "pdfsharp.1.50.5147.nupkg.sha512"
     },
     "PuppeteerSharp/10.0.0": {
       "type": "package",
@@ -3751,6 +3906,48 @@
       "sha512": "sha512-LaSDYOJDh2WncgRboqiWtk/Igqoim/LV7v808qBeWY/f36Ol5oEKguEYpKrWw5ap8KYP0SRXf7/v3zil9koY6Q==",
       "path": "simmetrics.net/1.0.5",
       "hashPath": "simmetrics.net.1.0.5.nupkg.sha512"
+    },
+    "SixLabors.Fonts/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LFQsCZlV0xlUyXAOMUo5kkSl+8zAQXXbbdwWchtk0B4o7zotZhQsQOcJUELGHdfPfm/xDAsz6hONAuV25bJaAg==",
+      "path": "sixlabors.fonts/1.0.0",
+      "hashPath": "sixlabors.fonts.1.0.0.nupkg.sha512"
+    },
+    "SixLabors.ImageSharp/3.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-PlwUHnLZ67G1i0xXDYQJYbFiJsvXiEFWtKdV0QvY9j+dFasYbl+vWXXY42/asTsNjchsH5BLuoRzlf8Fa8lzpg==",
+      "path": "sixlabors.imagesharp/3.0.2",
+      "hashPath": "sixlabors.imagesharp.3.0.2.nupkg.sha512"
+    },
+    "SixLabors.ImageSharp.Drawing/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-02z/+BESLiV/dn8NV+9+DkK9X6R2UmcwR8AVytupvwKa0EPVqYyx8zh+PpksqSjpibDVnVMXlq3OaMCDeDrEug==",
+      "path": "sixlabors.imagesharp.drawing/1.0.0",
+      "hashPath": "sixlabors.imagesharp.drawing.1.0.0.nupkg.sha512"
+    },
+    "SkiaSharp/2.88.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-GG8X3EdfwyBfwjl639UIiOVOKEdeoqDgYrz0P1MUCnefXt9cofN+AK8YB/v1+5cLMr03ieWCQdDmPqnFIzSxZw==",
+      "path": "skiasharp/2.88.3",
+      "hashPath": "skiasharp.2.88.3.nupkg.sha512"
+    },
+    "SkiaSharp.NativeAssets.macOS/2.88.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-CEbWAXMGFkPV3S1snBKK7jEG3+xud/9kmSAhu0BEUKKtlMdxx+Qal0U9bntQREM9QpqP5xLWZooodi8IlV8MEg==",
+      "path": "skiasharp.nativeassets.macos/2.88.3",
+      "hashPath": "skiasharp.nativeassets.macos.2.88.3.nupkg.sha512"
+    },
+    "SkiaSharp.NativeAssets.Win32/2.88.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-MU4ASL8VAbTv5vSw1PoiWjjjpjtGhWtFYuJnrN4sNHFCePb2ohQij9JhSdqLLxk7RpRtWPdV93fbA53Pt+J0yw==",
+      "path": "skiasharp.nativeassets.win32/2.88.3",
+      "hashPath": "skiasharp.nativeassets.win32.2.88.3.nupkg.sha512"
     },
     "Stef.Validation/0.1.0": {
       "type": "package",
@@ -3996,6 +4193,13 @@
       "sha512": "sha512-PGKkrd2khG4CnlyJwxwwaWWiSiWFNBGlgXvJpeO0xCXrZ89ODrQ6tjEWS/kOqZ8GwEOUATtKtzp1eRgmYNfclg==",
       "path": "system.linq.expressions/4.3.0",
       "hashPath": "system.linq.expressions.4.3.0.nupkg.sha512"
+    },
+    "System.Memory/4.5.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-XIWiDvKPXaTveaB7HVganDlOCRoj03l+jrwNvcge/t8vhGYKvqV+dMv6G4SAX2NoNmN0wZfVPTAlFwZcZvVOUw==",
+      "path": "system.memory/4.5.5",
+      "hashPath": "system.memory.4.5.5.nupkg.sha512"
     },
     "System.Net.Http/4.3.0": {
       "type": "package",
@@ -4312,13 +4516,6 @@
       "path": "system.threading.tasks.extensions/4.3.0",
       "hashPath": "system.threading.tasks.extensions.4.3.0.nupkg.sha512"
     },
-    "System.Threading.Thread/4.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-gIdJqDXlOr5W9zeqFErLw3dsOsiShSCYtF9SEHitACycmvNvY8odf9kiKvp6V7aibc8C4HzzNBkWXjyfn7plbQ==",
-      "path": "system.threading.thread/4.0.0",
-      "hashPath": "system.threading.thread.4.0.0.nupkg.sha512"
-    },
     "System.Threading.Timer/4.3.0": {
       "type": "package",
       "serviceable": true,
@@ -4409,6 +4606,13 @@
       "sha512": "sha512-7WaVMHklpT3Ye2ragqRIwlFRsb6kOk63BOGADV0fan3ulVfGLUYkDi5yNUsZS/7FVNkWbtHAlDLmu4WnHGfqvQ==",
       "path": "zxing.net/0.16.9",
       "hashPath": "zxing.net.0.16.9.nupkg.sha512"
+    },
+    "ZXing.Net.Bindings.SkiaSharp/0.16.13": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-+eRgnM6utt+05IXJJjSdTgT2RvRpGjg1JbA2VhI+P3bQxR1QCsJCOJ4/csbfdvVvTfDDGkxB781UKZHk2iCYvA==",
+      "path": "zxing.net.bindings.skiasharp/0.16.13",
+      "hashPath": "zxing.net.bindings.skiasharp.0.16.13.nupkg.sha512"
     },
     "ZXing.Net.Bindings.Windows.Compatibility/0.16.12": {
       "type": "package",
